@@ -214,6 +214,7 @@ public class AccountConfigurations {
 		Scanner scanner=new Scanner(System.in);
 		double depositCash;
 		if(accountProduct instanceof LoanAccount) {
+			LoanAccount loanAccount=(LoanAccount)accountProduct;
 			System.out.println("Choose the service type of deposit");
 			int i=1;
 			for(Service service:accountProduct.getServiceList()) {
@@ -224,9 +225,9 @@ public class AccountConfigurations {
 			int typeOfService=scanner.nextInt();
 			Service service=accountProduct.getServiceList().get(typeOfService-1);
 			if(service.getServiceName().equalsIgnoreCase("Cheque Deposit")) {
-				System.out.println("Enter the deposit amount,a charge of 0.3% from the deposit amount will be deducted");
+				System.out.println("Enter the deposit amount,a charge of 0.03% from the deposit amount will be deducted");
 				depositCash=scanner.nextDouble();
-				depositCash-=(depositCash*0.003);
+				depositCash-=(depositCash*loanAccount.getChequeDepositRate());
 				System.out.println("Deposit amount after service charge deduction:"+depositCash);
 			}
 			else {

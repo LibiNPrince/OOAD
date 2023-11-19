@@ -38,7 +38,7 @@ public class ProductConfigurations {
 
 	}
 
-	public static ArrayList<Product> createProduct(ArrayList<Service> serviceList) {
+	public static Product createProduct(ArrayList<Service> serviceList) {
 		if(serviceList.size()<1) {
 			System.out.println("No services created");
 			return null;
@@ -46,8 +46,8 @@ public class ProductConfigurations {
 		ArrayList<Product> productList=new ArrayList<Product>();
 		Scanner scanner=new Scanner(System.in);
 		Product product=null;
-		String productLooper="";
-		do {
+//		String productLooper="";
+//		do {
 			System.out.println("Which  product you want to create?\n1.Savings Max Account 2.Loan Account 3.Current Account");
 			int productChoice=scanner.nextInt();
 			
@@ -65,15 +65,16 @@ public class ProductConfigurations {
 					System.out.println("Invalid");
 					break;
 			}
+			return product;
 			
-			productList.add(product);
+//			productList.add(product);
 			
-			System.out.println("Do you wish to continue adding another Product?(y/n)");
-			scanner=new Scanner(System.in);
-			productLooper=scanner.nextLine();
-		}while(productLooper.equalsIgnoreCase("y"));
+//			System.out.println("Do you wish to continue adding another Product?(y/n)");
+//			scanner=new Scanner(System.in);
+//			productLooper=scanner.nextLine();
+//		}while(productLooper.equalsIgnoreCase("y"));
 		
-		return productList;
+//		return productList;
 	}
 	
 	private static SavingsMaxAccount createSavingsMaxAccountProduct(ArrayList<Service> serviceList) {

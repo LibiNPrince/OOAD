@@ -3,7 +3,7 @@ package com.ilp.entity;
 import java.util.ArrayList;
 
 public class LoanAccount extends Product {
-	private double chequeDepositRate=0.3;
+	private double chequeDepositRate=0.03;
 
 	public LoanAccount(String productNo, String productName, ArrayList<Service> serviceList) {
 		super(productNo, productName, serviceList);

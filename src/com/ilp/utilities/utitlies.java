@@ -16,6 +16,7 @@ public class utitlies {
 		ArrayList<Account> accountList=new ArrayList<Account>();
 		ArrayList<Product> bankProductList=new ArrayList<Product>();
 		ArrayList<Service> bankServiceList=new ArrayList<Service>();
+		Product bankProduct=null;
 		
 		Scanner scanner=new Scanner(System.in);
 		String userUtilityLooper="";
@@ -34,8 +35,9 @@ public class utitlies {
 				ProductConfigurations.displayServices(bankServiceList);
 				break;
 			case 3:
-				Product product=null;
-				bankProductList=ProductConfigurations.createProduct(bankServiceList);
+				
+				bankProduct=ProductConfigurations.createProduct(bankServiceList);
+				bankProductList.add(bankProduct);
 				break;
 			case 4:
 				ProductConfigurations.displayProduct(bankProductList);
